@@ -406,8 +406,8 @@ public final class Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_RdPessoaFisicaActionPerformed
 
     private void BtExcluirContatoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtExcluirContatoActionPerformed
-        
-     if (TbPessoa.getSelectedRow() != -1) {
+
+        if (TbPessoa.getSelectedRow() != -1) {
             for (int i = 0; i > agenda.getPessoas().size(); i++) {
                 if (agenda.getPessoas().get(i) instanceof PessoaFisica) {
                     PessoaFisica pessoa = (PessoaFisica) agenda.getPessoas().get(i);
@@ -423,9 +423,18 @@ public final class Principal extends javax.swing.JFrame {
             }
             DefaultTableModel dtb = (DefaultTableModel) TbPessoa.getModel();
             dtb.removeRow(TbPessoa.getSelectedRow());
-            BtNovoContatoActionPerformed(evt);
+
         }
-       
+        if (TbPessoa.getSelectedRow() <= 0) {
+            BtNovoContato.setEnabled(true);
+            BtAlterar.setEnabled(false);
+            BtSalvaContato.setEnabled(false);
+            BtExcluirContato.setEnabled(false);
+            BtCancelar.setEnabled(false);
+            BtLimparContato.setEnabled(false);
+            habilitaCaixdetexto(true);
+
+        }
     }//GEN-LAST:event_BtExcluirContatoActionPerformed
 
     private void TbPessoaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TbPessoaMouseClicked
@@ -434,20 +443,22 @@ public final class Principal extends javax.swing.JFrame {
             BtAlterar.setEnabled(true);
             BtExcluirContato.setEnabled(true);
             BtLimparContato.setEnabled(true);
+            BtCancelar.setEnabled(true);
             TxtNome.setText((String) TbPessoa.getValueAt(TbPessoa.getSelectedRow(), 0));
             TxtTelefone.setText((String) TbPessoa.getValueAt(TbPessoa.getSelectedRow(), 1));
             TxtEmail.setText((String) TbPessoa.getValueAt(TbPessoa.getSelectedRow(), 2));
             TxtCpfCnpj.setText((String) TbPessoa.getValueAt(TbPessoa.getSelectedRow(), 3));
 
-        } 
+        }
     }//GEN-LAST:event_TbPessoaMouseClicked
 
     private void TbPessoaKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TbPessoaKeyReleased
         if (TbPessoa.getSelectedRow() != -1) {
-             habilitaCaixdetexto(false);
+            habilitaCaixdetexto(false);
             BtAlterar.setEnabled(true);
             BtExcluirContato.setEnabled(true);
             BtLimparContato.setEnabled(true);
+            BtCancelar.setEnabled(true);
             TxtNome.setText((String) TbPessoa.getValueAt(TbPessoa.getSelectedRow(), 0));
             TxtEmail.setText((String) TbPessoa.getValueAt(TbPessoa.getSelectedRow(), 2));
             TxtCpfCnpj.setText((String) TbPessoa.getValueAt(TbPessoa.getSelectedRow(), 3));
@@ -484,7 +495,7 @@ public final class Principal extends javax.swing.JFrame {
     private void BtAlterarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtAlterarActionPerformed
 
         if (TbPessoa.getSelectedRow() != -1) {
-           for (int i = 0; i > agenda.getPessoas().size(); i++) {
+            for (int i = 0; i > agenda.getPessoas().size(); i++) {
                 if (agenda.getPessoas().get(i) instanceof PessoaFisica) {
                     PessoaFisica pessoa = (PessoaFisica) agenda.getPessoas().get(i);
                     if (pessoa.getCpf().equals((String) TbPessoa.getValueAt(TbPessoa.getSelectedRow(), 2))) {
@@ -502,10 +513,10 @@ public final class Principal extends javax.swing.JFrame {
                 }
             }
         }
-       TbPessoa.setValueAt(TxtNome.getText(), TbPessoa.getSelectedRow(), 0);
-            TbPessoa.setValueAt(TxtTelefone.getText(), TbPessoa.getSelectedRow(), 1);
-            TbPessoa.setValueAt(TxtEmail.getText(), TbPessoa.getSelectedRow(), 2);
-            TbPessoa.setValueAt(TxtCpfCnpj.getText(), TbPessoa.getSelectedRow(), 3); 
+        TbPessoa.setValueAt(TxtNome.getText(), TbPessoa.getSelectedRow(), 0);
+        TbPessoa.setValueAt(TxtTelefone.getText(), TbPessoa.getSelectedRow(), 1);
+        TbPessoa.setValueAt(TxtEmail.getText(), TbPessoa.getSelectedRow(), 2);
+        TbPessoa.setValueAt(TxtCpfCnpj.getText(), TbPessoa.getSelectedRow(), 3);
     }//GEN-LAST:event_BtAlterarActionPerformed
 
     /**
@@ -521,7 +532,6 @@ public final class Principal extends javax.swing.JFrame {
     public void habilitaBotoes(boolean estado) {
         BtNovoContato.setEnabled(estado);
         BtAlterar.setEnabled(estado);
-        BtExcluirContato.setEnabled(estado);
         BtSalvaContato.setEnabled(!estado);
         BtExcluirContato.setEnabled(!estado);
         BtCancelar.setEnabled(!estado);
