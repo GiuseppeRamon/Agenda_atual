@@ -73,6 +73,7 @@ public final class Principal extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         BtCancelar = new javax.swing.JButton();
         BtAlterar = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Cadastro de Pessoa");
@@ -204,6 +205,13 @@ public final class Principal extends javax.swing.JFrame {
             }
         });
 
+        jButton2.setText("Sobre");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -233,6 +241,8 @@ public final class Principal extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(RdPessoaFisica)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jButton2)
+                        .addGap(30, 30, 30)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel1)
                             .addComponent(jLabel2))
@@ -271,7 +281,9 @@ public final class Principal extends javax.swing.JFrame {
                             .addComponent(jButton1)
                             .addComponent(RdPessoaJuridica, javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(RdPessoaFisica)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(RdPessoaFisica)
+                                    .addComponent(jButton2))
                                 .addComponent(lData, javax.swing.GroupLayout.PREFERRED_SIZE, 13, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(lHora, javax.swing.GroupLayout.PREFERRED_SIZE, 13, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -306,7 +318,7 @@ public final class Principal extends javax.swing.JFrame {
                         .addComponent(BtAlterar)))
                 .addGap(18, 18, 18)
                 .addComponent(JScrollTabelaContato, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addGap(29, 29, 29))
         );
 
         pack();
@@ -342,13 +354,13 @@ public final class Principal extends javax.swing.JFrame {
     private void BtSalvaContatoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtSalvaContatoActionPerformed
 
         if (!RdPessoaFisica.isSelected() && !RdPessoaJuridica.isSelected()) {
-            System.out.println("erro"); // arrumar
+           
             pessoaJDialog dialog = new pessoaJDialog(new javax.swing.JFrame(), true);
             dialog.setVisible(true);
 
         } else {
             if (TxtNome.getText().equals("") || TxtEmail.getText().equals("") || TxtCpfCnpj.getText().equals("") || TxtTelefone.getText().equals("")) {
-                System.out.println("erro"); // arrumar
+              
                 dadosJDialog dialog = new dadosJDialog(new javax.swing.JFrame(), true);
                 dialog.setVisible(true);
             } else {
@@ -519,6 +531,11 @@ public final class Principal extends javax.swing.JFrame {
         TbPessoa.setValueAt(TxtCpfCnpj.getText(), TbPessoa.getSelectedRow(), 3);
     }//GEN-LAST:event_BtAlterarActionPerformed
 
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+       sobreDialog dialog = new sobreDialog(new javax.swing.JFrame(), true);
+       dialog.setVisible(true);
+    }//GEN-LAST:event_jButton2ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -570,6 +587,7 @@ public final class Principal extends javax.swing.JFrame {
     private javax.swing.JTextField TxtNome;
     private javax.swing.JTextField TxtTelefone;
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel lData;
