@@ -1,17 +1,15 @@
-
 package Interfaces;
 
 import java.awt.Toolkit;
 
 public class dadosJDialog extends javax.swing.JDialog {
 
- 
     public dadosJDialog(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
         setIcon();
     }
-    
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {

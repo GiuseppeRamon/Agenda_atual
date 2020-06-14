@@ -1,13 +1,11 @@
-
 package Interfaces;
 
 import java.awt.Toolkit;
 
 public class pessoaJDialog extends javax.swing.JDialog {
 
-  
     public pessoaJDialog(java.awt.Frame parent, boolean modal) {
-        
+
         super(parent, modal);
         initComponents();
         setIcon();
@@ -139,6 +137,5 @@ public class pessoaJDialog extends javax.swing.JDialog {
     private void setIcon() {
         setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("iconalerta.png")));
     }
-
 
 }

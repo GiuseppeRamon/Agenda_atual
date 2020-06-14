@@ -83,9 +83,8 @@ public class sobreDialog extends javax.swing.JDialog {
         dispose();
     }//GEN-LAST:event_sobreSairActionPerformed
 
-    
     public static void main(String args[]) {
-       
+
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 sobreDialog dialog = new sobreDialog(new javax.swing.JFrame(), true);
@@ -107,5 +106,6 @@ public class sobreDialog extends javax.swing.JDialog {
     // End of variables declaration//GEN-END:variables
 
     private void setIcon() {
-setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("me.png")));    }
+        setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("me.png")));
+    }
 }
