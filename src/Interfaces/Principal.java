@@ -408,18 +408,22 @@ public final class Principal extends javax.swing.JFrame {
     private void BtExcluirContatoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtExcluirContatoActionPerformed
         
         if (TbPessoa.getSelectedRow() != -1) {
-            DefaultTableModel dtb = (DefaultTableModel) TbPessoa.getModel();
-            dtb.removeRow(TbPessoa.getSelectedRow());
-            BtNovoContatoActionPerformed(evt);
-            BtNovoContato.setEnabled(true);
-            BtSalvaContato.setEnabled(false);
-            BtCancelar.setEnabled(false);
-            BtLimparContato.setEnabled(false);
+            for (int i = 0; i > agenda.getPessoas().size(); i++) {
+                if (agenda.getPessoas().get(i) instanceof PessoaFisica) {
+                    PessoaFisica pessoa = (PessoaFisica) agenda.getPessoas().get(i);
+                    if (pessoa.getCpf().equals((String) TbPessoa.getValueAt(TbPessoa.getSelectedRow(), 2))) {
+                        agenda.removePessoa(pessoa);
+                    }
+                } else {
+                    PessoaJuridica pessoa = (PessoaJuridica) agenda.getPessoas().get(i);
+                    if (pessoa.getCnpj().equals((String) TbPessoa.getValueAt(TbPessoa.getSelectedRow(), 2))) {
+                        agenda.removePessoa(pessoa);
+                    }
+                }
+            }
             
         } 
-        if (TbPessoa.getSelectedRow() <= 0) {
-             habilitaCaixdetexto(true);
-        }
+       
     }//GEN-LAST:event_BtExcluirContatoActionPerformed
 
     private void TbPessoaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TbPessoaMouseClicked
@@ -478,11 +482,25 @@ public final class Principal extends javax.swing.JFrame {
     private void BtAlterarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtAlterarActionPerformed
 
         if (TbPessoa.getSelectedRow() != -1) {
-            TbPessoa.setValueAt(TxtNome.getText(), TbPessoa.getSelectedRow(), 0);
-            TbPessoa.setValueAt(TxtTelefone.getText(), TbPessoa.getSelectedRow(), 1);
-            TbPessoa.setValueAt(TxtEmail.getText(), TbPessoa.getSelectedRow(), 2);
-            TbPessoa.setValueAt(TxtCpfCnpj.getText(), TbPessoa.getSelectedRow(), 3);
+           for (int i = 0; i > agenda.getPessoas().size(); i++) {
+                if (agenda.getPessoas().get(i) instanceof PessoaFisica) {
+                    PessoaFisica pessoa = (PessoaFisica) agenda.getPessoas().get(i);
+                    if (pessoa.getCpf().equals((String) TbPessoa.getValueAt(TbPessoa.getSelectedRow(), 2))) {
+                        pessoa.setNome(TxtNome.getText());
+                        pessoa.getContato().setEmail(TxtEmail.getText());
+                        pessoa.getContato().setTelefone(TxtTelefone.getText());
+                    }
+                } else {
+                    PessoaJuridica pessoa = (PessoaJuridica) agenda.getPessoas().get(i);
+                    if (pessoa.getCnpj().equals((String) TbPessoa.getValueAt(TbPessoa.getSelectedRow(), 2))) {
+                        pessoa.setNome(TxtNome.getText());
+                        pessoa.getContato().setEmail(TxtEmail.getText());
+                        pessoa.getContato().setTelefone(TxtTelefone.getText());
+                    }
+                }
+            }
         }
+        
     }//GEN-LAST:event_BtAlterarActionPerformed
 
     /**

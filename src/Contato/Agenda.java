@@ -18,7 +18,9 @@ public class Agenda {
             System.out.println("Não é comunicável");
         }
     }
-
+public ArrayList<Pessoa> getPessoas(){
+        return this.pessoas;
+    }
     public void removePessoa(Pessoa pessoa){
         pessoas.remove(pessoa);
     }
