@@ -407,7 +407,7 @@ public final class Principal extends javax.swing.JFrame {
 
     private void BtExcluirContatoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtExcluirContatoActionPerformed
         
-        if (TbPessoa.getSelectedRow() != -1) {
+     if (TbPessoa.getSelectedRow() != -1) {
             for (int i = 0; i > agenda.getPessoas().size(); i++) {
                 if (agenda.getPessoas().get(i) instanceof PessoaFisica) {
                     PessoaFisica pessoa = (PessoaFisica) agenda.getPessoas().get(i);
@@ -421,8 +421,10 @@ public final class Principal extends javax.swing.JFrame {
                     }
                 }
             }
-            
-        } 
+            DefaultTableModel dtb = (DefaultTableModel) TbPessoa.getModel();
+            dtb.removeRow(TbPessoa.getSelectedRow());
+            BtNovoContatoActionPerformed(evt);
+        }
        
     }//GEN-LAST:event_BtExcluirContatoActionPerformed
 
@@ -500,7 +502,10 @@ public final class Principal extends javax.swing.JFrame {
                 }
             }
         }
-        
+       TbPessoa.setValueAt(TxtNome.getText(), TbPessoa.getSelectedRow(), 0);
+            TbPessoa.setValueAt(TxtTelefone.getText(), TbPessoa.getSelectedRow(), 1);
+            TbPessoa.setValueAt(TxtEmail.getText(), TbPessoa.getSelectedRow(), 2);
+            TbPessoa.setValueAt(TxtCpfCnpj.getText(), TbPessoa.getSelectedRow(), 3); 
     }//GEN-LAST:event_BtAlterarActionPerformed
 
     /**
