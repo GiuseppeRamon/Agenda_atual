@@ -354,13 +354,13 @@ public final class Principal extends javax.swing.JFrame {
     private void BtSalvaContatoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtSalvaContatoActionPerformed
 
         if (!RdPessoaFisica.isSelected() && !RdPessoaJuridica.isSelected()) {
-           
+
             pessoaJDialog dialog = new pessoaJDialog(new javax.swing.JFrame(), true);
             dialog.setVisible(true);
 
         } else {
             if (TxtNome.getText().equals("") || TxtEmail.getText().equals("") || TxtCpfCnpj.getText().equals("") || TxtTelefone.getText().equals("")) {
-              
+
                 dadosJDialog dialog = new dadosJDialog(new javax.swing.JFrame(), true);
                 dialog.setVisible(true);
             } else {
@@ -532,8 +532,8 @@ public final class Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_BtAlterarActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-       sobreDialog dialog = new sobreDialog(new javax.swing.JFrame(), true);
-       dialog.setVisible(true);
+        sobreDialog dialog = new sobreDialog(new javax.swing.JFrame(), true);
+        dialog.setVisible(true);
     }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
