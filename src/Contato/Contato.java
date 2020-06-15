@@ -1,15 +1,7 @@
 package Contato;
 
-import java.text.SimpleDateFormat;
-import java.util.Date;
-
 public class Contato {
-  
-    SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
-    
-    protected String dataCadastro = sdf.format(new Date());
-   
-    
+
     private String email;
     private String telefone;
 
@@ -32,10 +24,6 @@ public class Contato {
 
     public void setTelefone(String telefone) {
         this.telefone = telefone;
-    }
-
-    public String getDataCadastro() {
-        return this.dataCadastro;
     }
 
 }

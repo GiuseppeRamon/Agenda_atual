@@ -20,7 +20,7 @@ public class sobreDialog extends javax.swing.JDialog {
         super(parent, modal);
         initComponents();
         setIcon();
-        
+
     }
 
     /**
@@ -71,7 +71,7 @@ public class sobreDialog extends javax.swing.JDialog {
                 .addComponent(sobreJDialog, javax.swing.GroupLayout.PREFERRED_SIZE, 525, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
             .addGroup(layout.createSequentialGroup()
-                .addGap(233, 233, 233)
+                .addGap(211, 211, 211)
                 .addComponent(sobreSair)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -80,9 +80,9 @@ public class sobreDialog extends javax.swing.JDialog {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(sobreJDialog, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(sobreSair)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
         );
 
         pack();
@@ -91,6 +91,7 @@ public class sobreDialog extends javax.swing.JDialog {
 
     private void sobreSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sobreSairActionPerformed
         dispose();
+
     }//GEN-LAST:event_sobreSairActionPerformed
 
     public static void main(String args[]) {
