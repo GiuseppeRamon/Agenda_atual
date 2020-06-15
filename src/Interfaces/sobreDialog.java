@@ -20,7 +20,7 @@ public class sobreDialog extends javax.swing.JDialog {
         super(parent, modal);
         initComponents();
         setIcon();
-        jTextArea1.disable();
+        
     }
 
     /**
@@ -41,11 +41,21 @@ public class sobreDialog extends javax.swing.JDialog {
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         setType(java.awt.Window.Type.POPUP);
 
+        jTextArea1.setBackground(new java.awt.Color(204, 255, 255));
         jTextArea1.setColumns(20);
+        jTextArea1.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jTextArea1.setRows(5);
         jTextArea1.setText("Este software foi desenvolvido como forma de aprendizado...\npor Giuseppe Ramon Parise. \nAno de 2020.\nUCPEL.\nPROFESSOR: Marcos Echevarria.\nDisciplina: Programação orientada a objetos.");
+        jTextArea1.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        jTextArea1.setDisabledTextColor(new java.awt.Color(0, 0, 0));
+        jTextArea1.setDoubleBuffered(true);
+        jTextArea1.setDragEnabled(true);
+        jTextArea1.setEnabled(false);
+        jTextArea1.setMargin(new java.awt.Insets(12, 2, 2, 2));
+        jTextArea1.setSelectionColor(new java.awt.Color(255, 255, 255));
         sobreJDialog.setViewportView(jTextArea1);
 
+        sobreSair.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Sair.png"))); // NOI18N
         sobreSair.setText("Sair");
         sobreSair.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -69,8 +79,8 @@ public class sobreDialog extends javax.swing.JDialog {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(sobreJDialog, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addComponent(sobreJDialog, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(sobreSair)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
