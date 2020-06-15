@@ -494,7 +494,7 @@ public final class Principal extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         sairJDialog dialog = new sairJDialog(new javax.swing.JFrame(), true);
-            dialog.setVisible(true);
+        dialog.setVisible(true);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void BtCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtCancelarActionPerformed
