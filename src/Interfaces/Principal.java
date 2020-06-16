@@ -154,7 +154,7 @@ public final class Principal extends javax.swing.JFrame {
 
             },
             new String [] {
-                "Nome", "Telefone", "Email", "Código"
+                "Nome", "Telefone", "Email", "CPF/CNPJ"
             }
         ) {
             boolean[] canEdit = new boolean [] {
