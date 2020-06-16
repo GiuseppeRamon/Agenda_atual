@@ -154,7 +154,7 @@ public final class Principal extends javax.swing.JFrame {
 
             },
             new String [] {
-                "Nome", "Telefone", "Email", "CPF/CNPJ"
+                "Nome", "Telefone", "Email", "CPF - CNPJ"
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -176,6 +176,10 @@ public final class Principal extends javax.swing.JFrame {
             }
         });
         JScrollTabelaContato.setViewportView(TbPessoa);
+        if (TbPessoa.getColumnModel().getColumnCount() > 0) {
+            TbPessoa.getColumnModel().getColumn(2).setResizable(false);
+            TbPessoa.getColumnModel().getColumn(3).setResizable(false);
+        }
 
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Fechar.png"))); // NOI18N
         jButton1.setText("Sair");
